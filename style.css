@@ -1,0 +1,28 @@
+:root {
+    --white: #FFF;
+    --gray: #F4F4F4;
+    --orange: #FF8A58;
+    --blue: #25CED1;
+}
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Normalization */
+ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem
+}
+a {
+    text-decoration: none;
+    font-size: 1rem;
+}
+h1 {
+    font-size: 2rem;
+}
