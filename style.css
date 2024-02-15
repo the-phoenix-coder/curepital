@@ -1,28 +1,109 @@
 :root {
-    --white: #FFF;
-    --gray: #F4F4F4;
-    --orange: #FF8A58;
-    --blue: #25CED1;
+  --white: #fff;
+  --gray: #f4f4f4;
+  --orange: #ff8a58;
+  --blue: #25ced1;
+  --dark-blue: #21b9bc;
 }
 *,
 *::before,
 *::after {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
 }
 /* Normalization */
+svg {
+  width: 25px;
+  fill: var(--blue);
+  cursor: pointer;
+}
+svg:is(:hover, :focus) {
+  fill: var(--dark-blue);
+  transition: fill 0.3s;
+  -webkit-transition: fill 0.3s;
+  -moz-transition: fill 0.3s;
+  -ms-transition: fill 0.3s;
+  -o-transition: fill 0.3s;
+}
+button {
+  padding: 1rem 2rem;
+  font-size: 1rem;
+  font-weight: bold;
+  background-color: var(--orange);
+  color: var(--white);
+  border: 0;
+  outline: 0;
+}
 ul {
-    list-style: none;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 1rem
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
 }
 a {
-    text-decoration: none;
-    font-size: 1rem;
+  text-decoration: none;
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--blue);
+}
+li a:hover {
+  cursor: pointer;
+  color: var(--dark-blue);
+  transition: color 0.3s;
+  -webkit-transition: color 0.3s;
+  -moz-transition: color 0.3s;
+  -ms-transition: color 0.3s;
+  -o-transition: color 0.3s;
 }
 h1 {
-    font-size: 2rem;
+  font-size: 2rem;
+  color: var(--blue);
+}
+span {
+  color: var(--orange);
+}
+/* Start Header */
+header {
+  position: fixed;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 2rem;
+  padding: 0.5rem 3rem;
+}
+header nav {
+  display: flex;
+}
+header svg {
+  display: none;
+}
+@media (max-width: 50em) {
+  header nav {
+    position: absolute;
+    width: 100%;
+    top: 50px;
+    right: 0;
+    background-color: var(--gray);
+    padding-block: 3rem;
+    justify-content: center;
+    translate: 100%;
+    transition: translate 0.3s;
+    -webkit-transition: translate 0.3s;
+    -moz-transition: translate 0.3s;
+    -ms-transition: translate 0.3s;
+    -o-transition: translate 0.3s;
+  }
+  header ul {
+    flex-direction: column;
+    gap: 3rem;
+  }
+  header svg {
+    display: block;
+    position: fixed;
+    right: 30px;
+  }
 }
