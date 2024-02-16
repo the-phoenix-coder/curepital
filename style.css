@@ -107,3 +107,50 @@ header svg {
     right: 30px;
   }
 }
+/* End Header */
+/* Start Main */
+main {
+  padding: 5rem 2rem;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+main section {
+  flex: 1;
+}
+main section h1 {
+  font-size: 3.8rem;
+  margin-bottom: 3rem;
+}
+main section #main-btns {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.3rem;
+}
+main #main-btns button {
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+  cursor: pointer;
+}
+main button:is(:hover,:focus) {
+  box-shadow: 0 1px 2px #f97d48;
+  transition: box-shadow .3s;
+  -webkit-transition: box-shadow .3s;
+  -moz-transition: box-shadow .3s;
+  -ms-transition: box-shadow .3s;
+  -o-transition: box-shadow .3s;
+}
+main #main-img img {
+  width: 100%;
+}
+@media (max-width: 50em) {
+  main {
+    flex-direction: column;
+  }
+}
+/* End Main */
