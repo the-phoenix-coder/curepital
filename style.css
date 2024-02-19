@@ -180,3 +180,46 @@ main #main-img img {
   gap: 3rem;
 }
 /* End Options */
+/* Start services */
+#services #services-container {
+  margin-block: 2rem;
+}
+#services #services-container section {
+  padding: 4rem 1rem 1rem 1rem;
+  background-position: center;
+  background-size: cover;
+  margin-block: 1rem;
+  border-radius: .5rem;
+  -webkit-border-radius: .5rem;
+  -moz-border-radius: .5rem;
+  -ms-border-radius: .5rem;
+  -o-border-radius: .5rem;
+}
+#services #services-container section > * {
+  color: white;
+}
+#services #services-container section:first-child {
+  background-image: url(sources/doctor1.jpg);
+}
+#services #services-container section:nth-child(2) {
+  background-image: url(sources/doctor2.jpg);
+}
+#services #services-container section:nth-child(3) {
+  background-image: url(sources/doctor3.jpg);
+}
+#services #services-container section:last-child {
+  background-image: url(sources/doctor4.jpg);
+}
+@media(min-width: 50em) {
+  #services-container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  #services {
+    display: flex;
+  }
+  #services #services-container section{
+    width: 300px;
+  }
+}
+/* End services */
