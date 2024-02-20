@@ -74,7 +74,22 @@ span {
   color: var(--orange);
 }
 .option-title {
+  position: relative;
   color: var(--blue);
+}
+.option-title::before {
+  content: '';
+  background-color: var(--blue);
+  width: 3px;
+  height: 20px;
+  position: absolute;
+  left: -10px;
+  top: 50%;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
 }
 .option-btn {
   cursor: pointer;
@@ -90,10 +105,10 @@ header {
   align-items: center;
   gap: 2rem;
   padding: 0.5rem 3rem;
+  z-index: 2;
 }
 header nav {
   display: flex;
-  z-index: 10;
 }
 header svg {
   display: none;
@@ -114,7 +129,6 @@ header svg {
     -moz-transition: translate 0.3s;
     -ms-transition: translate 0.3s;
     -o-transition: translate 0.3s;
-    z-index: 11;
   }
   header ul {
     flex-direction: column;
@@ -180,46 +194,104 @@ main #main-img img {
   gap: 3rem;
 }
 /* End Options */
-/* Start services */
-#services #services-container {
+/* Start About */
+#about #about-container {
   margin-block: 2rem;
 }
-#services #services-container section {
+#about #app {
+  background-color: var(--gray);
+}
+#about #about-container section {
   padding: 4rem 1rem 1rem 1rem;
   background-position: center;
   background-size: cover;
-  margin-block: 1rem;
-  border-radius: .5rem;
-  -webkit-border-radius: .5rem;
-  -moz-border-radius: .5rem;
-  -ms-border-radius: .5rem;
-  -o-border-radius: .5rem;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
 }
-#services #services-container section > * {
+#about #about-container section > * {
   color: white;
 }
-#services #services-container section:first-child {
+#about #about-container section:first-child {
   background-image: url(sources/doctor1.jpg);
 }
-#services #services-container section:nth-child(2) {
+#about #about-container section:nth-child(2) {
   background-image: url(sources/doctor2.jpg);
 }
-#services #services-container section:nth-child(3) {
+#about #about-container section:nth-child(3) {
   background-image: url(sources/doctor3.jpg);
 }
-#services #services-container section:last-child {
+#about #about-container section:last-child {
   background-image: url(sources/doctor4.jpg);
 }
-@media(min-width: 50em) {
-  #services-container {
+@media (min-width: 50em) {
+  #about {
+    display: flex;
+    padding: 4rem;
+  }
+  #about-container {
     display: flex;
     flex-wrap: wrap;
+    gap: 1rem;
+    flex: 1;
   }
-  #services {
-    display: flex;
-  }
-  #services #services-container section{
-    width: 300px;
+  #about-container > section {
+    width: 350px;
+    max-width: 100%;
   }
 }
-/* End services */
+/* End About */
+/* Start Partners */
+#parteners {
+  padding: 4rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  color: #999;
+  font-size: 2rem;
+  font-weight: bold;
+}
+/* End Partners */
+/* Start Services */
+#services {
+  padding: 4rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#services p {
+  color: var(--blue);
+}
+#services h1 {
+  color: black;
+  margin-block: 0.5rem 2rem;
+}
+#services #services-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+#services .service {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 0.3rem;
+  box-shadow: 1px 1px 3px var(--gray), -1px -1px 3px var(--gray);
+  padding: 2rem 4rem;
+  border-radius: 0.5rem;
+  -webkit-border-radius: 0.5rem;
+  -moz-border-radius: 0.5rem;
+  -ms-border-radius: 0.5rem;
+  -o-border-radius: 0.5rem;
+}
+#services > p {
+  width: fit-content;
+}
+/* End Services */
