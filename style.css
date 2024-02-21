@@ -13,6 +13,9 @@
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
 /* Normalization */
 svg {
   width: 25px;
@@ -70,6 +73,9 @@ h1 {
   font-size: 2rem;
   color: var(--blue);
 }
+p {
+  line-height: 1.5rem;
+}
 span {
   color: var(--orange);
 }
@@ -78,7 +84,7 @@ span {
   color: var(--blue);
 }
 .option-title::before {
-  content: '';
+  content: "";
   background-color: var(--blue);
   width: 3px;
   height: 20px;
@@ -295,3 +301,36 @@ main #main-img img {
   width: fit-content;
 }
 /* End Services */
+/* Start Doctors */
+@media (min-width: 50em) {
+  #doctors {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding-inline: 4rem;
+  }
+  #doctors > * {
+    flex: 1;
+  }
+  #doctors #doctor-info > * {
+    margin-block: 0.5rem;
+  }
+  #doctors #doctor-info h1 {
+    color: black;
+  }
+  #doctors #doctor-info p {
+    color: #888;
+  }
+  #doctors #doctor-info a {
+    margin-block: 1.5rem;
+    display: block;
+  }
+  #doctors #doctor-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 1rem;
+  }
+}
+/* End Doctors */
