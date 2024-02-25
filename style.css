@@ -364,6 +364,9 @@ main #main-img img {
 }
 /* End Services */
 /* Start Doctors */
+#doctors {
+  padding: 2rem;
+}
 #doctors #doctor-imgs {
   display: grid;
   grid-template-areas: 
