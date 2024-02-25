@@ -261,6 +261,7 @@ main #main-img img {
   -o-border-radius: 0.5rem;
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 1rem;
 }
 #about #app .download-btns {
@@ -280,9 +281,8 @@ main #main-img img {
 }
 #about #app img {
   max-width: 100%;
-  width: 350px;
+  width: 300px;
   height: auto;
-  aspect-ratio: 1;
 }
 @media (min-width: 50em) {
   #about {
@@ -364,6 +364,47 @@ main #main-img img {
 }
 /* End Services */
 /* Start Doctors */
+#doctors #doctor-imgs {
+  display: grid;
+  grid-template-areas: 
+  'one . .'
+  'two four .'
+  'three four five'
+  'six six seven';
+  gap: .2rem;
+}
+#doctors #doctor-imgs img {
+  max-width: 100%;
+  border-radius: .4rem;
+  -webkit-border-radius: .4rem;
+  -moz-border-radius: .4rem;
+  -ms-border-radius: .4rem;
+  -o-border-radius: .4rem;
+}
+#doctors #doctor-imgs img:first-child {
+  grid-area: one;
+}
+#doctors #doctor-imgs img:nth-child(2) {
+  grid-area: two;
+}
+#doctors #doctor-imgs img:nth-child(3) {
+  grid-area: three;
+}
+#doctors #doctor-imgs img:nth-child(4) {
+  grid-area: four;
+  height: 100%;
+}
+#doctors #doctor-imgs img:nth-child(5) {
+  grid-area: five;
+}
+#doctors #doctor-imgs img:nth-child(6) {
+  grid-area: six;
+  height: 50%;
+  width: 100%;
+}
+#doctors #doctor-imgs img:last-child {
+  grid-area: seven;
+}
 @media (min-width: 50em) {
   #doctors {
     display: flex;
@@ -371,6 +412,8 @@ main #main-img img {
     justify-content: space-between;
     align-items: center;
     padding-inline: 4rem;
+    gap: 2rem;
+    padding: 4rem
   }
   #doctors > * {
     flex: 1;
