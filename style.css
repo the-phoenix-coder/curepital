@@ -454,7 +454,6 @@ main #main-img img {
   display: flex;
   flex-direction: column;
   gap: 2rem;
-  flex: 0.5;
 }
 #testimonial p,
 #testimonial h1 {
@@ -485,23 +484,28 @@ main #main-img img {
   #testimonial {
     padding: 4rem;
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
   }
+  #testimonial #testimonial-content {
+    flex: 0.5;
+  }
   #testimonial #testimonial-samples {
     flex: 1;
     display: flex;
-    justify-content: space-between;
-    align-items: start;
+    flex-direction: row;
     flex-wrap: wrap;
+    justify-content: center;
+    align-items: start;
     gap: 1rem;
   }
   #testimonial #testimonial-samples video {
-    max-width: 58%;
+    max-width: 48%;
   }
   #testimonial #testimonial-samples video:is(:nth-child(1), :nth-child(4)) {
-    width: 40%;
+    width: 35%;
   }
 }
 /* End Testimonial */
