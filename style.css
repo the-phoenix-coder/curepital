@@ -211,7 +211,12 @@ main #main-img img {
 }
 /* End Options */
 /* Start About */
-#about #about-container {
+#about-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  flex: 1;
   margin-block: 2rem;
 }
 #about #about-container section {
@@ -284,20 +289,15 @@ main #main-img img {
   width: 300px;
   height: auto;
 }
-@media (min-width: 50em) {
+@media (min-width: 75em) {
   #about {
     display: flex;
     align-items: start;
     padding: 4rem;
-  }
-  #about-container {
-    display: flex;
-    flex-wrap: wrap;
     gap: 1rem;
-    flex: 1;
   }
   #about-container > section {
-    width: 350px;
+    width: 300px;
     max-width: 100%;
   }
 }
@@ -509,3 +509,79 @@ main #main-img img {
   }
 }
 /* End Testimonial */
+#why {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 4rem;
+}
+#why > h1,
+#why > h3 {
+  width: fit-content;
+}
+#why #why-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+  gap: 1rem;
+}
+#why .feature {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+@media (min-width: 50em) {
+  #why #why-container {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+/* Start News */
+#news h1 {
+  color: black;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+#news #news-container {
+  justify-content: center;
+  align-items: center;
+}
+#news .new {
+  margin: 1rem auto;
+  background-image: url(sources/doctor1.jpg);
+  background-position: center;
+  background-size: cover;
+  height: 200px;
+  width: 340px;
+  max-width: 100%;
+  display: flex;
+  flex-direction: column;
+  color: white;
+  justify-content: end;
+  padding-inline: 1rem;
+  padding-bottom: 1rem;
+  border-radius: .5rem;
+  -webkit-border-radius: .5rem;
+  -moz-border-radius: .5rem;
+  -ms-border-radius: .5rem;
+  -o-border-radius: .5rem;
+}
+@media(min-width: 50em) {
+  #news {
+    padding: 4rem;
+  }
+  #news #news-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: .5rem;
+  }
+}
+/* End News */
