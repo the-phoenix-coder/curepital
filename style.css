@@ -4,6 +4,7 @@
   --orange: #ff8a58;
   --blue: #25ced1;
   --dark-blue: #21b9bc;
+  --xl-font: clamp(2rem, 2.5vw, 3.5rem);
 }
 *,
 *::before,
@@ -12,6 +13,23 @@
   padding: 0;
   box-sizing: border-box;
   font-family: Arial, Helvetica, sans-serif;
+}
+body > * {
+  padding-inline: 1rem;
+}
+body > header {
+  padding-block: 1rem;
+}
+main {
+  padding-block: 6rem;
+}
+body > *:not(header, main) {
+  padding-block: 4rem;
+}
+@media (min-width: 50em) {
+  body > * {
+    padding-inline: 4rem;
+  }
 }
 html {
   scroll-behavior: smooth;
@@ -31,7 +49,6 @@ svg:is(:hover, :focus) {
   -o-transition: fill 0.3s;
 }
 button {
-  padding: 1rem 2rem;
   font-size: 1rem;
   font-weight: bold;
   background-color: var(--orange);
@@ -39,6 +56,7 @@ button {
   border: 0;
   outline: 0;
   cursor: pointer;
+  padding: 1rem 2rem;
 }
 button:is(:hover, :focus) {
   scale: 1.01;
@@ -70,7 +88,7 @@ li a:hover {
   -o-transition: color 0.3s;
 }
 h1 {
-  font-size: 2rem;
+  font-size: var(--xl-font);
   color: var(--blue);
 }
 p {
@@ -80,6 +98,7 @@ span {
   color: var(--orange);
 }
 .option-title {
+  font-size: 2rem;
   position: relative;
   color: var(--blue);
 }
@@ -110,7 +129,6 @@ header {
   justify-content: space-between;
   align-items: center;
   gap: 2rem;
-  padding: 0.5rem 3rem;
   z-index: 2;
 }
 header nav {
@@ -125,9 +143,9 @@ header svg {
     position: absolute;
     width: 100%;
     height: 100vh;
-    top: 50px;
+    top: 0;
     right: 0;
-    padding-block: 3rem;
+    padding-top: 4rem;
     justify-content: center;
     translate: 100%;
     transition: translate 0.3s;
@@ -149,7 +167,6 @@ header svg {
 /* End Header */
 /* Start Main */
 main {
-  padding: 5rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -159,7 +176,7 @@ main section {
   flex: 1;
 }
 main section h1 {
-  font-size: 3.8rem;
+  font-size: var(--xl-font);
   margin-bottom: 3rem;
 }
 main section #main-btns {
@@ -191,7 +208,6 @@ main #main-img img {
   justify-content: space-between;
   align-items: center;
   gap: 3rem;
-  padding: 4rem;
 }
 #options > section {
   display: flex;
@@ -220,10 +236,10 @@ main #main-img img {
   margin-block: 2rem;
 }
 #about #about-container section {
+  padding: 5rem 5rem 1rem 1rem;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  padding: 4rem 1rem 1rem 1rem;
   background-position: center;
   background-size: cover;
   border-radius: 0.5rem;
@@ -258,7 +274,6 @@ main #main-img img {
 }
 #about #app {
   background-color: var(--gray);
-  padding: 2rem;
   border-radius: 0.5rem;
   -webkit-border-radius: 0.5rem;
   -moz-border-radius: 0.5rem;
@@ -268,9 +283,12 @@ main #main-img img {
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+  padding: 2rem;
 }
 #about #app .download-btns {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 0.5rem;
 }
 #about #app .download-btns button {
@@ -282,7 +300,7 @@ main #main-img img {
   fill: white;
 }
 #about #app h1 {
-  font-size: 3rem;
+  font-size: var(--xl-font);
 }
 #about #app img {
   max-width: 100%;
@@ -293,7 +311,7 @@ main #main-img img {
   #about {
     display: flex;
     align-items: start;
-    padding: 4rem;
+
     gap: 1rem;
   }
   #about-container > section {
@@ -304,7 +322,6 @@ main #main-img img {
 /* End About */
 /* Start Partners */
 #parteners {
-  padding: 4rem;
   display: flex;
   flex-wrap: wrap;
   gap: 1rem;
@@ -317,7 +334,6 @@ main #main-img img {
 /* End Partners */
 /* Start Services */
 #services {
-  padding: 4rem;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -338,13 +354,13 @@ main #main-img img {
   gap: 1rem;
 }
 #services .service {
+  padding: 5rem;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   gap: 0.3rem;
   box-shadow: 1px 1px 3px var(--gray), -1px -1px 3px var(--gray);
-  padding: 2rem 4rem;
   border-radius: 0.5rem;
   -webkit-border-radius: 0.5rem;
   -moz-border-radius: 0.5rem;
@@ -364,9 +380,6 @@ main #main-img img {
 }
 /* End Services */
 /* Start Doctors */
-#doctors {
-  padding: 2rem;
-}
 #doctors #doctor-imgs {
   display: grid;
   grid-template-areas:
@@ -414,9 +427,8 @@ main #main-img img {
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    padding-inline: 4rem;
+
     gap: 2rem;
-    padding: 4rem;
   }
   #doctors > * {
     flex: 1;
@@ -445,7 +457,6 @@ main #main-img img {
 /* Start Testimonial */
 #testimonial {
   background-color: #09141e;
-  padding: 1rem;
   display: flex;
   flex-direction: column;
   gap: 2rem;
@@ -482,7 +493,6 @@ main #main-img img {
 }
 @media (min-width: 50em) {
   #testimonial {
-    padding: 4rem;
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -515,7 +525,6 @@ main #main-img img {
   justify-content: center;
   align-items: center;
   gap: 2rem;
-  padding: 4rem;
 }
 #why > h1,
 #why > h3 {
@@ -563,13 +572,12 @@ main #main-img img {
   flex-direction: column;
   color: white;
   justify-content: end;
-  padding-inline: 1rem;
-  padding-bottom: 1rem;
   border-radius: 0.5rem;
   -webkit-border-radius: 0.5rem;
   -moz-border-radius: 0.5rem;
   -ms-border-radius: 0.5rem;
   -o-border-radius: 0.5rem;
+  padding: 5rem 5rem 1rem 1rem;
 }
 #news .new:first-child {
   background-image: url(Sources/doctor1.jpg);
@@ -584,9 +592,6 @@ main #main-img img {
   background-image: url(Sources/doctor4.jpg);
 }
 @media (min-width: 50em) {
-  #news {
-    padding: 4rem;
-  }
   #news #news-container {
     display: flex;
     flex-wrap: wrap;
@@ -602,7 +607,6 @@ main #main-img img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 4rem 2rem;
   gap: 2rem;
   /* background-color: #09141e; */
   background-image: linear-gradient(120deg, #09141e, var(--blue));
@@ -642,7 +646,6 @@ main #main-img img {
   display: flex;
   flex-direction: column;
   gap: 3rem;
-  padding: 4rem 2rem;
 }
 #footer > section {
   display: flex;
@@ -693,13 +696,17 @@ footer {
   gap: 1rem;
   background-color: #09141e;
   color: white;
-  padding: 4rem 2rem 2rem;
 }
 footer nav {
   order: 2;
 }
 footer > ul {
   order: 1;
+}
+@media (max-width: 50em) {
+  footer nav ul {
+    flex-direction: column;
+  }
 }
 footer > ul svg {
   fill: var(--orange);
