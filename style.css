@@ -205,7 +205,7 @@ main #main-img img {
   background-color: var(--gray);
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
+  justify-content: center;
   align-items: center;
   gap: 3rem;
 }
@@ -229,7 +229,7 @@ main #main-img img {
 /* Start About */
 #about-container {
   display: flex;
-  flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
   gap: 0.5rem;
   flex: 1;
@@ -307,16 +307,22 @@ main #main-img img {
   width: 300px;
   height: auto;
 }
+@media(min-width: 50em) {
+  #about-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  #about-container > section {
+    width: 295px;
+  }
+}
 @media (min-width: 75em) {
   #about {
     display: flex;
     align-items: start;
-
+    justify-content: space-between;
     gap: 1rem;
-  }
-  #about-container > section {
-    width: 300px;
-    max-width: 100%;
   }
 }
 /* End About */
@@ -324,12 +330,20 @@ main #main-img img {
 #parteners {
   display: flex;
   flex-wrap: wrap;
-  gap: 1rem;
-  justify-content: space-between;
+  gap: 2rem;
+  justify-content: center;
   align-items: center;
   color: #999;
   font-size: 2rem;
   font-weight: bold;
+}
+#parteners div {
+  flex-grow: 1;
+}
+@media(max-width: 50em) {
+  #parteners {
+    flex-direction: column;
+  }
 }
 /* End Partners */
 /* Start Services */
@@ -339,11 +353,14 @@ main #main-img img {
   align-items: center;
   justify-content: center;
 }
-#services p {
+#services > p {
   color: var(--blue);
+  line-height: 2rem;
+  text-align: center;
 }
 #services h1 {
   color: black;
+  text-align: center;
   margin-block: 0.5rem 2rem;
 }
 #services #services-container {
@@ -366,6 +383,7 @@ main #main-img img {
   -moz-border-radius: 0.5rem;
   -ms-border-radius: 0.5rem;
   -o-border-radius: 0.5rem;
+  flex-grow: 1;
 }
 #services > p {
   width: fit-content;
@@ -421,30 +439,37 @@ main #main-img img {
 #doctors #doctor-imgs img:last-child {
   grid-area: seven;
 }
+#doctors #doctor-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+}
+#doctors #doctor-info h1 {
+  color: black;
+}
+#doctors #doctor-info p {
+  color: #888;
+}
+#doctors #doctor-info a {
+  margin-block: 1.5rem;
+  display: block;
+}
+#doctors #doctor-stats {
+  gap: 2rem;
+  display: flex;
+  flex-direction: column;
+}
 @media (min-width: 50em) {
   #doctors {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-
     gap: 2rem;
   }
   #doctors > * {
     flex: 1;
-  }
-  #doctors #doctor-info > * {
-    margin-block: 0.5rem;
-  }
-  #doctors #doctor-info h1 {
-    color: black;
-  }
-  #doctors #doctor-info p {
-    color: #888;
-  }
-  #doctors #doctor-info a {
-    margin-block: 1.5rem;
-    display: block;
   }
   #doctors #doctor-stats {
     display: flex;
@@ -524,11 +549,12 @@ main #main-img img {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
+  gap: 3rem;
 }
 #why > h1,
 #why > h3 {
   width: fit-content;
+  text-align: center;
 }
 #why #why-container {
   width: 100%;
@@ -536,7 +562,7 @@ main #main-img img {
   flex-direction: column;
   justify-content: center;
   align-items: stretch;
-  gap: 1rem;
+  gap: 3rem;
 }
 #why .feature {
   display: flex;
