@@ -28,7 +28,7 @@ body > *:not(header, main) {
 }
 @media (min-width: 50em) {
   body > * {
-    padding-inline: 4rem;
+    padding-inline: 2rem;
   }
 }
 html {
@@ -70,7 +70,7 @@ ul {
   list-style: none;
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 3rem;
 }
 a {
   text-decoration: none;
@@ -137,7 +137,7 @@ header nav {
 header svg {
   display: none;
 }
-@media (max-width: 90em) {
+@media (max-width: 50em) {
   header nav {
     background-color: var(--gray);
     position: absolute;
@@ -156,7 +156,7 @@ header svg {
   }
   header ul {
     flex-direction: column;
-    gap: 3rem;
+    gap: 4rem;
   }
   header svg {
     display: block;
@@ -205,7 +205,7 @@ main #main-img img {
   background-color: var(--gray);
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   gap: 3rem;
 }
@@ -231,9 +231,10 @@ main #main-img img {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   gap: 0.5rem;
-  flex: 1;
   margin-block: 2rem;
+  flex: 1;
 }
 #about #about-container section {
   padding: 5rem 5rem 1rem 1rem;
@@ -247,6 +248,7 @@ main #main-img img {
   -moz-border-radius: 0.5rem;
   -ms-border-radius: 0.5rem;
   -o-border-radius: 0.5rem;
+  height: 200px;
 }
 #about #about-container section > * {
   color: white;
@@ -272,6 +274,9 @@ main #main-img img {
   width: 10px;
   fill: white;
 }
+#about #app h1 {
+  font-size: var(--xl-font);
+}
 #about #app {
   background-color: var(--gray);
   border-radius: 0.5rem;
@@ -282,25 +287,32 @@ main #main-img img {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
   padding: 2rem;
 }
 #about #app .download-btns {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  align-items: center;
   gap: 0.5rem;
 }
 #about #app .download-btns button {
   display: flex;
   background-color: black;
   gap: 1.2rem;
+  width: 250px;
+  padding: 1;
 }
 #about #app .download-btns button svg {
   fill: white;
 }
-#about #app h1 {
-  font-size: var(--xl-font);
+#about #app .download-btns button p {
+  font-size: .9rem;
+  font-weight: normal;
+}
+#about #app .download-btns button h4 {
+  font-size: 1.25rem;
 }
 #about #app img {
   max-width: 100%;
@@ -311,10 +323,10 @@ main #main-img img {
   #about-container {
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: center;
   }
   #about-container > section {
-    width: 295px;
+    width: 320px;
   }
 }
 @media (min-width: 75em) {
@@ -473,6 +485,7 @@ main #main-img img {
   }
   #doctors #doctor-stats {
     display: flex;
+    flex-direction: row;
     justify-content: space-between;
     align-items: center;
     gap: 1rem;
